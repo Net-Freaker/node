@@ -1,5 +1,9 @@
+require("dotenv").config();
+
 ///framework
 const express = require("express");
+const mongoose = require("mongoose");
+//
 const req = require("express/lib/request");
 const res = require("express/lib/response");
 //database
@@ -8,6 +12,8 @@ const database = require("./database/index");
 const shapeAPI =express();
 //configur
 shapeAPI.use(express.json());
+//Establish data base connection
+mongoose.connect(process.env.MONGO_URL).then(() => console.log("Connection Established!!!!"));
 /*
 Route        /
 Description ->to get all books
