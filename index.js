@@ -8,6 +8,10 @@ const req = require("express/lib/request");
 const res = require("express/lib/response");
 //database
 const database = require("./database/index");
+//models
+const BookModel = require("./database/book");
+const AuthorModel = require("./database/author");
+const PublicationModel = require("./database/publications");
 //initialize express
 const shapeAPI =express();
 //configur
